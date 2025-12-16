@@ -8,12 +8,10 @@ class ReportNotifier extends StreamNotifier<List<ReportModel>> {
 
   @override
   Stream<List<ReportModel>> build() {
-    // Ini akan otomatis jalan saat aplikasi butuh data
     return _service.getReportsStream();
   }
 
   Future<void> addReport(ReportModel report) async {
-    // Loading state sebentar (opsional)
     await _service.addReport(report);
   }
 
@@ -26,7 +24,6 @@ class ReportNotifier extends StreamNotifier<List<ReportModel>> {
   }
 }
 
-// Perhatikan tipe providernya berubah jadi StreamNotifierProvider
 final reportProvider = StreamNotifierProvider<ReportNotifier, List<ReportModel>>(() {
   return ReportNotifier();
 });

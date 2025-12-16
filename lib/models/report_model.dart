@@ -5,7 +5,7 @@ class ReportModel {
   final String photoPath;
   final double latitude;
   final double longitude;
-  final String status; // 'pending' atau 'done'
+  final String status; 
   final DateTime createdAt;
   final String? doneDescription;
   final String? donePhotoPath;
